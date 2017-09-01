@@ -1,16 +1,48 @@
 
+int x = 0;
+int z = 600;
+int y = 0;
+int t = 300;
+int p = 300;
 void setup()
 {
-  size(500,500);
+  background(#F01D1D);
+  size(600, 600);
+  frameRate(10);
 }
 void draw()
 {
-  fill(255,255,0);
-  ellipse(200,100,100,100);
-  arc(200,100,60,60,PI/8,7*PI/8);
-  fill(0,0,0);
-  ellipse(85,40,10,15);
-  ellipse(115,40,10,15);
+  lines();
+  fill(0, 80, 0);
+  //green down
+  ellipse(300, t, 50, 50);
+  // green right
+  ellipse(t, 300, 50, 50);
+  // green up 
+  ellipse(p, 300, 50,50);
+  // green left
+  ellipse(300,p,50,50);
+  p = p - 60;
+  t = t + 60;
+  if(t > 560)
+  {
+    t = 300;
+  }
+
 }
 
 
+
+void lines()
+{
+  fill(0, 0, 0);
+  ellipse(x, x, 20, 20);
+  ellipse(z, y, 20, 20);
+  x = x + 15;
+  y = y + 15;
+  z = z - 15;
+  if (x > 620)
+  {
+    x = 0;
+  }
+}
